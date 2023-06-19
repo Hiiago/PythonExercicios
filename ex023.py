@@ -6,14 +6,22 @@ dezena: 3
 centena: 8
 milhar: 1'''
 
-numero = str(input('Um número de 0 a 9999: '))
-uni = numero[3]
-dez = numero[2]
-cen = numero[1]
-mil = numero[0]
+numero = int(input('Numero de 0 a 9999: '))
 
-print(f'O número: {numero}\n'
-      f'Para a unidade {uni}\n'
-      f'Para a dezena {dez}\n'
-      f'Para a centena {cen}\n'
-      f'Para o milhar {mil}')
+uni = numero // 1 % 10
+dez = numero // 10 % 10
+cen = numero // 100 % 10
+mil = numero // 1000 % 10
+
+print(f'Unidade: {uni}\n'
+      f'Dezena: {dez}\n'
+      f'Centena: {cen}\n'
+      f'Milhar: {mil}')
+
+'''a cada 10 unidades, formamos 1 dezena (10 unidades); 
+a cada 10 dezenas, formamos 1 centena (100 unidades); 
+a cada 10 centenas, formamos 1 unidade de milhar (1.000 unidades). 
+Sempre que o algarismo 0 é acrescentado, devemos multiplicar a ordem por 10.'''
+#divisão inteira e depois o resto da divisão
+#o símbolo // faz a divisão e só pega o que esta antes da vírgula.
+#o símbolo % faz a divisão e só pega o que esta depois da vírgula.
